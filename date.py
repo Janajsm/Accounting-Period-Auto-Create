@@ -1,4 +1,4 @@
-
+//Auto Created Weekly
 from datetime import timedelta
 import pandas as pd
 
@@ -16,74 +16,25 @@ for i in date_len:
         print(start_date.strftime("%Y-%m-%d"))
         print(end_date.strftime("%Y-%m-%d"))
 
+//Auto Created Monthly
+from datetime import timedelta
+import pandas as pd
+
+date_len=pd.date_range(start='2024-01-01',end='2024-12-31',freq='MS')
+# print(date_len)
+for i in date_len:
+        start_date=i
+        # print(i)
+        ed_date = start_date + timedelta(days=32)
+        # print(ed_date)
+        end_date = ed_date.replace(day=1) - timedelta(days=1)
+        # print(end_date)
+        period_name=end_date.strftime("%B-%Y")
+        print(period_name)
+        print(start_date.strftime("%Y-%m-%d"))
+        print(end_date.strftime("%Y-%m-%d"))
 
 
-
-""" Given Year get month Start date and End date """
-'''
-from datetime import datetime, timedelta
-
-def get_month_start_end(year, month):
-    start_date = datetime(year, month, 1)
-    end_date = start_date + timedelta(days=32)
-    print(end_date)
-    end_date = end_date.replace(day=1) - timedelta(days=1)
-    return (start_date, end_date)
-
-# Example usage
-year = 2020
-month = 2
-start_date, end_date = get_month_start_end(year, month)
-print(f'Start date: {start_date.strftime("%Y-%m-%d")}')
-print(f'End date: {end_date.strftime("%Y-%m-%d")}')'''
-
-'''
-from datetime import datetime, timedelta
-
-def get_month_start_end(year, month):
-    start_date = datetime(year, month, 1)
-    end_date = start_date + timedelta(days=32)
-    end_date = end_date.replace(day=1) - timedelta(days=1)
-    return (start_date, end_date)
-
-def get_year_month_ranges(year):
-    month_ranges = []
-    for month in range(1, 13):
-        start_date, end_date = get_month_start_end(year, month)
-        month_ranges.append((start_date, end_date))
-    return month_ranges
-
-# Example usage
-year = 2020
-month_ranges = get_year_month_ranges(year)
-for start_date, end_date in month_ranges:
-    print(f'Start date: {start_date.strftime("%Y-%m-%d")}')
-    print(f'End date: {end_date.strftime("%Y-%m-%d")}')'''
-
-# from datetime import datetime, timedelta
-
-# def get_month_start_end(year, month):
-#     start_date = datetime(year, month, 1)
-#     end_date = start_date + timedelta(days=32)
-#     end_date = end_date.replace(day=1) - timedelta(days=1)
-#     return (start_date, end_date)
-
-# def get_date_range_month_ranges(start_date, end_date):
-#     month_ranges = []
-#     current_date = start_date
-#     while current_date <= end_date:
-#         start_date, end_date = get_month_start_end(current_date.year, current_date.month)
-#         month_ranges.append((start_date, end_date))
-#         current_date = end_date + timedelta(days=1)
-#     return month_ranges
-
-# # Example usage
-# start_date = datetime(2020, 1, 1)
-# end_date = datetime(2020, 12, 31)
-# month_ranges = get_date_range_month_ranges(start_date, end_date)
-# for start_date, end_date in month_ranges:
-#     print(f'Start date: {start_date.strftime("%Y-%m-%d")}')
-#     print(f'End date: {end_date.strftime("%Y-%m-%d")}')
 
 
 
